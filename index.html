@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OfflineDoc AI</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+
+<div class="topbar">
+  🏥 OfflineDoc AI
+  <span id="time"></span>
+</div>
+
+<div class="nav">
+  <button onclick="openPage('home')">🏠 Home</button>
+  <button onclick="openPage('patient')">👤 Patient</button>
+  <button onclick="openPage('history')">📋 History</button>
+  <button onclick="openPage('about')">ℹ️ About</button>
+</div>
+
+<div class="main">
+
+<!-- HOME -->
+<div id="home" class="section">
+
+  <h2>📊 Dashboard</h2>
+
+  <!-- STATS -->
+  <div class="dashboard">
+
+    <div class="card stat blue">
+      👥 Patients<br>
+      <b id="count">0</b>
+    </div>
+
+    <div class="card stat green">
+      📄 Reports<br>
+      <b id="reports">0</b>
+    </div>
+
+    <div class="card stat orange">
+      ⚡ Status : Offline<br>
+      🟢 Active
+    </div>
+
+  </div>
+
+  <!-- INFO -->
+  <div class="card">
+    🧠 System Overview <br><br>
+    OfflineDoc AI provides instant medical guidance without internet.
+    Designed for rural areas, emergency use, and quick diagnosis.
+  </div>
+
+</div>
+<!-- PATIENT -->
+<div id="patient" class="section" style="display:none;">
+  <h2>Patient Entry</h2>
+
+  <input id="name" placeholder="👤 Name">
+  <input id="age" placeholder="🎂 Age">
+
+  <div class="phone-box">
+    <select id="country">
+      <option value="+91">🇮🇳 +91</option>
+      <option value="+1">🇺🇸 +1</option>
+      <option value="+44">🇬🇧 +44</option>
+    </select>
+    <input id="phone" placeholder="📱 Phone">
+  </div>
+
+  <input id="symptom" placeholder="💊 Symptoms">
+
+  <button onclick="check()">Analyze</button>
+
+  <div id="result"></div>
+
+  <button onclick="downloadPDF()">📄 Download Report</button>
+</div>
+
+<!-- HISTORY -->
+<div id="history" class="section" style="display:none;">
+  <h2>Patient History</h2>
+
+  <button class="danger" onclick="clearHistory()">Clear All</button>
+
+  <div id="historyList"></div>
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="section" style="display:none;">
+  <h2>ℹ️ About OfflineDoc AI</h2>
+
+  <div class="card">
+    OfflineDoc AI is an intelligent, offline-first medical assistant designed to deliver essential healthcare support without relying on internet connectivity.
+It enables users to enter patient details, analyze symptoms, and receive immediate guidance — making it highly effective in rural areas, emergency situations, and low-network environments.
+
+The system integrates key features such as accurate symptom-based analysis, real-time emergency alerts, secure patient history management, and downloadable medical reports in PDF format.
+By operating completely offline, OfflineDoc AI ensures reliability, speed, and accessibility when timely medical assistance is most critical.
+
+Our mission is to bridge the gap between technology and healthcare by providing a dependable solution that works anytime, anywhere — regardless of connectivity constraints.”**
+    <br><br>
+💥 FEATURES (CLEAN DISPLAY) <br>
+    ✔ Symptom Analysis  
+    ✔ Emergency Alerts  
+    ✔ Patient History  
+    ✔ PDF Reports  
+    ✔ Symptom Analysis
+    ✔ Emergency Alerts
+    ✔ Patient History Tracking
+    ✔ PDF Report Generation
+
+    <br><br>
+
+    <b>“No Internet. No Delay. Just Care.”</b>
+  </div>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
